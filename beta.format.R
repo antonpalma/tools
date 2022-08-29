@@ -63,15 +63,20 @@ beta.format <- function(df,beta,se="",alpha=.05,cilb="",ciub="",pval,exp=FALSE,
 }
 
 
-# testdf <- data.frame(estimate=rgamma(n=6,2),SE=rbeta(n=6,3,5),p.value=rbeta(n=6,1,2)) %>%
-#   mutate(LCI=estimate-qnorm(0.975),UCI=estimate+qnorm(0.975))
-# beta.format(df=testdf,
-#             beta="estimate",se="SE",pval="p.value",
-#             exp=FALSE,keeporig=TRUE,estci=TRUE)
-# 
-# beta.format(df=testdf,
-#             beta="estimate",cilb="LCI",ciub="UCI",pval="p.value",
-#             exp=FALSE,keeporig=TRUE,estci=TRUE)
+# Test run
+if(FALSE){
+  testdf <- data.frame(estimate=rgamma(n=6,2),SE=rbeta(n=6,3,5),p.value=rbeta(n=6,1,2)) %>%
+    mutate(LCI=estimate-qnorm(0.975),UCI=estimate+qnorm(0.975))
+  beta.format(df=testdf,
+              beta="estimate",se="SE",pval="p.value",
+              exp=FALSE,keeporig=TRUE,estci=TRUE)
 
+  beta.format(df=testdf,
+              beta="estimate",cilb="LCI",ciub="UCI",pval="p.value",
+              exp=FALSE,keeporig=TRUE,estci=TRUE)
+  
+}
 
+### Figure this out
+# runGitHub(repo="tools",username="antonpalma",subdir="beta.format")
 
